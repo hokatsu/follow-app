@@ -9,6 +9,7 @@ class TweetsController < ApplicationController
 
   def create
     Tweet.create(tweet_params)
+    redirect_to "/"
   end
 
   private

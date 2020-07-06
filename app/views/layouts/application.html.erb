@@ -4,12 +4,19 @@
     <title>FollowApp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-    <%= yield %>
+    <header class="header">
+        <h1><a href="/">FollowApp</a></h1>
+          <a class="post" href="/tweets/new">投稿する</a>
+    </header>
+      <%= yield %>
+    <footer>
+      <p>
+        Copyright FollowApp 2020.
+      </p>
+    </footer>
   </body>
 </html>

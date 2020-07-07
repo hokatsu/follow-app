@@ -1,8 +1,3 @@
-  <% @tweets.each do |tweet| %>
-    <div class="content-post">
-      <p><%= tweet.text %></p>
-      <span class="name">
-        <%= tweet.name %>
-      </span>
-    </div>
-  <% end %>
+<% @tweets.each do |tweet| %>
+  <%= render partial: "tweet", locals: { tweet: tweet } %>
+<% end %>

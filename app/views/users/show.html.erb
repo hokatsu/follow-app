@@ -1,1 +1,11 @@
-  <p><%= @user.nickname %></p>
+<h1><%= @user.nickname %></h1>
+
+<p><%=link_to "フォロー", follows_user_path(@user.id) %></p>
+<p><%=link_to "フォロワー", followers_user_path(@user.id) %></p>
+<% if current_user != @user && @user.followed_by?(current_user) %>
+    <p><%=link_to "フォロー中", user_relationships_path(@user.id), method: :delete %></p>
+<% end %>
+
+<% if current_user != @user && !@user.followed_by?(current_user) %>
+    <p><%=link_to "フォローする", user_relationships_path(@user.id), method: :post %></p>
+<% end %>

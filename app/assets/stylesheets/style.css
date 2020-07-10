@@ -1,5 +1,5 @@
 .header {
-  padding: 10px;
+  padding: 20px 300px;
   border-bottom: 1px solid #D8D8D8;
   background-color: #fff;
   position: fixed;
@@ -7,44 +7,77 @@
   left: 0;
   right: 0;
   z-index: 5;
-  height: 62px;
+  height: 60px;
 }
 
 .header-contents {
-  position: relative;
+  display: flex;
+  justify-content:space-between;
 }
 
-.header-right {
-  float: right;
-  text-align: right;
-  margin-top: 14px;
+.header-left {
+  width: 120px;
 }
 
 .app-name {
-  font-size: 20px;
-  line-height: 41px;
-  float: left;
+  font-size: 30px;
+  line-height: 25px;
+}
+
+.header-right {
+  display: flex;
+  justify-content:space-around;
+  height: 40px;
+  width: 350px;
+  padding: 8px;
+}
+
+
+.app-name a {
+  text-decoration: none;
 }
 
 .current-name {
-  top: 5px;
   display: block;
-  float: left;
-  margin-left: 30px;
-  width: 150px;
-  height: 50px;
-  font-size: 1em;
-  position: relative;
+  width: 120px;
+  height: 40px;
+  text-align: right;
+  padding-top: 5px;
+  text-decoration: none;
+  font-size: 20px;
 }
+
+
 
 .btn {
   display: inline-block;
-  padding: 0.3em 1em;
+  text-align: left;
+  margin-top: 5px;
+  padding: 3px;
   text-decoration: none;
   color: #67c5ff;
   border: solid 2px #67c5ff;
   border-radius: 3px;
-  transition: .4s;
+}
+
+.tweets {
+  margin-top: 100px;
+  height: 100vh;
+  text-align: center;
+}
+
+.tweet {
+  width: 33%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 30px;
+  text-align: left;
+  border-bottom: solid 2px #D8D8D8;
+}
+
+.tweet-name a {
+  text-decoration: none;
+  color: darkgray;
 }
 
 .footer {
@@ -54,4 +87,14 @@
 
 .footer p {
   text-align: center;
+}
+
+.user-page {
+  margin-top: 200px;
+  height: 100vh;
+  text-align: center;
+}
+
+.user-name {
+  font-size: 30px;
 }

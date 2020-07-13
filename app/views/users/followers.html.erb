@@ -1,13 +1,14 @@
-<h1><%= @user.nickname %>さんのフォロワー一覧</h1>
+<div class="followers">
+  <h1><%= @user.nickname %>さんのフォロワー一覧</h1>
+    <% @users.each do |user| %>
+    <hr>
+    <p class="f-user"><%= link_to user.nickname, user_path(user.id) %></p>
+        <% if current_user != user && user.followed_by?(current_user) %>
+            <p><%=link_to "フォロー中", user_relationships_path(user.id),class:"btn", method: :delete %></p>
+        <% end %>
 
-<% @users.each do |user| %>
-  <hr>
-  <p><%= link_to user.nickname, user_path(user.id) %></p>
-    <% if current_user != user && user.followed_by?(current_user) %>
-        <p><%=link_to "フォロー中", user_relationships_path(user.id),class:"f-button", method: :delete %></p>
+        <% if current_user != user && !user.followed_by?(current_user) %>
+            <p><%=link_to "フォローする", user_relationships_path(user.id),class:"btn", method: :post %></p>
+        <% end %>
     <% end %>
-
-    <% if current_user != user && !user.followed_by?(current_user) %>
-        <p><%=link_to "フォローする", user_relationships_path(user.id),class:"f-button", method: :post %></p>
-    <% end %>
-<% end %>
+</div>

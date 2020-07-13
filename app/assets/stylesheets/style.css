@@ -1,3 +1,4 @@
+/* ヘッダーとフッターここから */
 .header {
   padding: 20px 300px;
   border-bottom: 1px solid #D8D8D8;
@@ -35,6 +36,7 @@
 
 .app-name a {
   text-decoration: none;
+  color: black;
 }
 
 .current-name {
@@ -45,6 +47,7 @@
   padding-top: 5px;
   text-decoration: none;
   font-size: 20px;
+  color: black;
 }
 
 
@@ -60,6 +63,28 @@
   border-radius: 3px;
 }
 
+.footer {
+  margin: 30px auto;
+  padding: 10px;
+}
+
+.footer p {
+  text-align: center;
+}
+/* ヘッダーとフッターここまで */
+
+
+/* サインアップ、サインインここから */
+
+.contents {
+  margin-top: 100px;
+  height: 100vh;
+  text-align: center;
+}
+
+/* サインアップ、サインインここまで */
+
+/* ツイート一覧ここから */
 .tweets {
   margin-top: 100px;
   height: 100vh;
@@ -79,16 +104,10 @@
   text-decoration: none;
   color: darkgray;
 }
+/* ツイート一覧ここまで */
 
-.footer {
-  margin: 30px auto;
-  padding: 10px;
-}
 
-.footer p {
-  text-align: center;
-}
-
+/* マイページここから */
 .user-page {
   margin-top: 200px;
   height: 100vh;
@@ -99,3 +118,43 @@
   font-size: 30px;
 }
 
+.f-member {
+  text-decoration: none;
+  color: black;
+}
+/* マイページここまで */
+
+/* フォロー、フォロワー一覧ここから */
+.follows {
+  margin-top: 120px;
+  height: 100vh;
+  text-align: center;
+}
+
+.followers {
+  margin-top: 120px;
+  height: 100vh;
+  text-align: center;
+}
+
+.f-user a{
+  text-decoration: none;
+  color: black;
+}
+/* フォロー、フォロワー一覧ここまで */
+
+/* ツイート作成ここから */
+
+.tweet-form {
+  margin-top: 120px;
+  height: 100vh;
+  text-align: center;
+}
+
+.t-text {
+  width: 30%;
+  margin: 5px 0 15px;
+  padding: 10px;
+  border: 1px solid #D8D8D8;
+  border-radius: 5px;
+}

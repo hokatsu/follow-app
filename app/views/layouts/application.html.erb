@@ -9,22 +9,25 @@
   </head>
   <body>
     <header class="header">
-        <h1><a href="/">FollowApp</a></h1>
-        <% if user_signed_in? %>
-            <h2><%= current_user.nickname %></h2>
-            <%= link_to "マイページ", "/users/#{current_user.id}" %>
-            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-            <%= link_to  "投稿する", new_tweet_path, class: "post" %>
-        <% else %>
-            <%= link_to "ログイン", new_user_session_path, class: "post" %>
-            <%= link_to "新規登録", new_user_registration_path, class: "post" %>
-        <% end %>
+      <div class="header-contents">
+        <div class="header-left">
+          <h1 class="app-name"><a href="/">FollowApp</a></h1>
+        </div>
+
+        <div class="header-right">
+          <% if user_signed_in? %>
+              <a class="current-name" href="/users/<%= current_user.id %>">
+                <%= current_user.nickname %>
+              </a>
+              <%= link_to "ログアウト", destroy_user_session_path,class: "btn", method: :delete %>
+              <%= link_to  "投稿する", new_tweet_path, class: "btn" %>
+          <% else %>
+              <%= link_to "ログイン", new_user_session_path, class: "btn" %>
+              <%= link_to "新規登録", new_user_registration_path, class: "btn" %>
+          <% end %>
+        </div>
+      </div>
     </header>
       <%= yield %>
-    <footer>
-      <p>
-        Copyright FollowApp 2020.
-      </p>
-    </footer>
   </body>
 </html>

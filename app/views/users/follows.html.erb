@@ -1,9 +1,10 @@
-<h1><%= @user.nickname %>さんのフォロー一覧</h1>
-
-<% @users.each do |user| %>
-  <hr>
-  <p><%= link_to user.nickname, user_path(user.id) %></p>
-    <% if current_user != user && user.followed_by?(current_user) %>
-        <p><%=link_to "フォロー中", user_relationships_path(user.id), method: :delete %></p>
-    <% end %>
-<% end %>
+<div class="follows">
+  <h1><%= @user.nickname %>さんのフォロー一覧</h1>
+  <% @users.each do |user| %>
+    <hr>
+    <p class="f-user"><%= link_to user.nickname, user_path(user.id) %></p>
+      <% if current_user != user && user.followed_by?(current_user) %>
+          <p><%=link_to "フォロー中", user_relationships_path(user.id),class:"btn", method: :delete %></p>
+      <% end %>
+  <% end %>
+</div>
